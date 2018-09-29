@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Новая запись</h2>
+
+<form action="/Post/Create" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input type="text" name="Title" id="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <textarea name="Description" id="Description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="Author">Author</label>
+        <input type="text" name="Author" id="Author" class="form-control" value="" />
+    </div>
+    <div class="form-group">
+        <label for="Avatar">Avatar</label>
+        <input type="file" name="Avatar" id="Avatar" class="form-control" />
+    </div>
+    <input type="submit" class="btn btn-primary" value="Add" />
+</form>
+

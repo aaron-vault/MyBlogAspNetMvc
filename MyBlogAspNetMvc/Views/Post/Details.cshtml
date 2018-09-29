@@ -1,0 +1,18 @@
+﻿@model MyBlogAspNetMvc.Models.Post
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+<h4>Author: @Model.Author </h4>
+<h4>Created: @Model.CreatedAt</h4>
+@if (Model.UpdatedAt >= Model.CreatedAt)
+{
+    <h4>Updated: @Model.UpdatedAt</h4>
+}
+
+<p>@Model.Description</p>
+
+
+

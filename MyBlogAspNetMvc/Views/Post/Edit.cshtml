@@ -1,0 +1,27 @@
+﻿@model MyBlogAspNetMvc.Models.Post
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<form action="@Url.Action("Edit", "Post", new { id = Model.Id, createdAt = Model.CreatedAt })" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input type="text" name="Title" id="Title" class="form-control" value="@Model.Title"/>
+    </div>
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <textarea name="Description" id="Description" class="form-control">@Model.Description</textarea>
+    </div>
+    <div class="form-group">
+        <label for="Author">Author</label>
+        <input type="text" name="Author" id="Author" class="form-control" value="@Model.Author" />
+    </div>
+    <input type="submit" class="btn btn-primary" value="Update" />
+</form>
+
+
+
