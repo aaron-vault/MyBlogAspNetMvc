@@ -13,6 +13,8 @@ namespace MyBlogAspNetMvc.Domains
         private PostContext context = new PostContext();
         private bool disposed = false;
 
+        public IPostAvatarRepository Avatar { get; }
+
         public PostRepository() { }
 
         public IEnumerable<Post> GetPosts()
@@ -28,7 +30,6 @@ namespace MyBlogAspNetMvc.Domains
         public void InsertPost(Post post)
         {
             Post item = context.Posts.Add(post);
-            //id = item.Id;
         }
 
         public void DeletePost(int id)

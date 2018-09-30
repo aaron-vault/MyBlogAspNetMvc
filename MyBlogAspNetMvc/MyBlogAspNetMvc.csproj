@@ -174,13 +174,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostController.cs" />
+    <Compile Include="Domains\PostAvatarRepository.cs" />
     <Compile Include="Domains\PostRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\PostConfiguration.cs" />
     <Compile Include="Models\PostContext.cs" />
+    <Compile Include="Models\PostImageConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ICrudRepository.cs" />
     <Compile Include="Repositories\IPostAvatarRepository.cs" />

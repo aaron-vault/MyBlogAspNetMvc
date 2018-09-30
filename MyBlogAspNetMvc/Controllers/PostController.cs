@@ -7,6 +7,7 @@ using MyBlogAspNetMvc.Repositories;
 using MyBlogAspNetMvc.Models;
 using MyBlogAspNetMvc.Domains;
 using System.Data;
+using System.IO;
 
 namespace MyBlogAspNetMvc.Controllers
 {
@@ -49,17 +50,20 @@ namespace MyBlogAspNetMvc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Title, Description, Author, Avatar")]
+        public ActionResult Create([Bind(Include = "Title, Description, Author")]
                     Post post, HttpPostedFileBase avatar)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    //int postId;
                     post.CreatedAt = DateTime.Now;
+                    post.Avatar = new PostImage { Img = avatar.FileName.ToString() };
                     postRepository.InsertPost(post);
                     postRepository.Save();
+
+                    string fileName = Path.GetFileName(avatar.FileName);
+                    avatar.SaveAs(Server.MapPath($"~/Files/{fileName}"));
 
                     return RedirectToAction("Index", "Home");
                 }

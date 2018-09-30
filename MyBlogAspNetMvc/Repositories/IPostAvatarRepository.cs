@@ -7,7 +7,7 @@ using MyBlogAspNetMvc.Models;
 
 namespace MyBlogAspNetMvc.Repositories
 {
-    public interface IPostAvatarRepository : ICrudRepository<Image>, IDisposable
+    public interface IPostAvatarRepository : ICrudRepository<PostImage>, IDisposable
     {
     }
 }

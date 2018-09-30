@@ -27,6 +27,7 @@ namespace MyBlogAspNetMvc.Util
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             //Регистрируем сопоставление типов
             builder.RegisterType<PostRepository>().As<IPostRepository>();
+            builder.RegisterType<PostAvatarRepository>().As<IPostAvatarRepository>();
             //Создаем новый контейнер с теми зависимостями, которые определены выше
             var container = builder.Build();
             //Установка сопоставителя зависимостей

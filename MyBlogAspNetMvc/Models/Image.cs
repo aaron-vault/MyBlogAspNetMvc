@@ -7,10 +7,12 @@ using System.Web;
 
 namespace MyBlogAspNetMvc.Models
 {
-    public class Image
+    public class PostImage
     {
+        [Key]
+        [ForeignKey("Post")]
         public int Id { get; set; }
-        public int PostId { get; set; }
+        public virtual Post Post { get; set; }
         public string Img { get; set; }
     }
 }

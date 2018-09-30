@@ -1,6 +1,8 @@
 ﻿using MyBlogAspNetMvc.Repositories;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -14,5 +16,6 @@ namespace MyBlogAspNetMvc.Models
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public string Author { get; set; }
+        public virtual PostImage Avatar { get; set; }
     }
 }
